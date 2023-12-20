@@ -29,13 +29,13 @@ const SLEEP_TIME = process.env.SLEEP_TIME || 30000;
         // loop through 10 pages:
         for (let i = PAGE_START; i <= PAGE_END; i++) {
             // Navigate to the URL you want to scrape
-            await page.goto(`https://www.dnb.com/business-directory/company-information.automobile_dealers.us.html?page=${i}`, { waitUntil: 'networkidle2' });
+            await page.goto(`xxxxl?page=${i}`, { waitUntil: 'networkidle2' });
 
             console.log('opened page', i, `waiting for ${SLEEP_TIME / 1000} seconds`);
             await sleep(SLEEP_TIME); // maybe it's not even needed
 
             // Wait for a specific element to appear on the page (adjust the selector as needed)
-            await page.waitForSelector('#companyResults', { timeout: 10000 });
+            await page.waitForSelector('#someId', { timeout: 10000 });
 
 
             // Use page.$$eval to select and extract the text content from matching elements
